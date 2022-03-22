@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/trendMoviesFragment">
+    <fragment
+        android:id="@+id/trendMoviesFragment"
+        android:name="com.example.moviesapp.presentation.trend_movies_screen.TrendMoviesFragment"
+        android:label="TrendMoviesFragment" >
+        <action
+            android:id="@+id/action_trendMoviesFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.moviesapp.presentation.movie_details_screen.MovieDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
